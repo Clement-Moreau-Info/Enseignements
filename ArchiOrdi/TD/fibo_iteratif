@@ -1,0 +1,62 @@
+##
+# @author 	Clément Moreau
+# Description : Calcul Fib(n) 
+#
+##
+
+##### Data section ##### 
+
+.data
+
+#### Text section ##### 
+
+.text 
+
+.globl _main_
+
+# Début du programme 
+
+_main_ :
+
+   li $t0, 6  # n
+   li $t1, 0   # F(0)
+   li $t2, 1   # F(1)
+   bnez  $t0, fib 
+   move $a0, $t1 
+   j fin 
+
+fib :      
+
+   beq $t0, 1, fib_end
+   move $t3, $t2 # F_temp = F(i)
+   add $t2, $t2, $t1 # F(i) <- F(i+1) = F(i) + F(i-1)
+   move $t1, $t3 # F(i-1) <- F(i)
+   sub $t0, $t0, 1
+   j fib 
+
+fib_end :
+
+   move $a0, $t2
+
+# Sorti du programme 
+
+fin :
+
+   jal print_int
+   li $v0, 10
+   syscall
+
+## Routines d'impression ## 
+# La routine imprime le contenu du registre $a0
+## 
+
+print_int :
+
+   li $v0, 1
+   syscall
+   jr $ra
+        	
+print_string :   
+    li $v0, 4                                          
+    syscall  
+    jr $ra   
