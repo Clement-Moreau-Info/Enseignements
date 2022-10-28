@@ -1,0 +1,547 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{multicol}
+\usepackage{tikz,tkz-tab}
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\usepackage{textcomp}
+\usepackage{cmbright}
+\usepackage[linesnumbered]{algorithm2e}
+\SetKwRepeat{Do}{do}{while}%
+\usetikzlibrary{automata,positioning}
+%\renewcommand{\headrulewidth}{1pt}
+\fancyhead[R]{Licence 3 : informatique}
+\fancyhead[L]{TDLA}
+\usepackage{multicol}
+\usepackage[framemethod=tikz]{mdframed}
+\usetikzlibrary{decorations.pathmorphing,calc}
+\usepackage{lipsum}% just to generate text for the example
+
+\newcommand\wavydecor{%
+    \draw[double distance=0.3ex]%decoration={coil, aspect=0.1,segment length=5pt,amplitude=1.1pt},decorate,line width=.5pt,black]
+      (O|-P) -- (O);
+}
+
+\newmdenv[
+hidealllines=true,
+innerleftmargin=10pt,
+innerrightmargin=0pt,
+innertopmargin=0pt,
+innerbottommargin=0pt,
+leftmargin=-10pt,
+skipabove=.5\baselineskip,
+skipbelow=.5\baselineskip,
+singleextra={\wavydecor},
+firstextra={\wavydecor},
+secondextra={\wavydecor},
+middleextra={\wavydecor}
+]{wavysbar}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 3cm
+\rightmargin 3cm
+\bottommargin 3cm
+\headheight 1cm
+\headsep 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bullet 1 0 9 -1
+\bullet 2 0 10 -1
+\bullet 3 0 0 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align center
+
+\size larger
+\lang french
+Théorie des langages & Automates
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang french
+Université de Tours – Département informatique de Blois
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\align center
+
+\lang french
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+large{TD2 - Langages réguliers et expressions régulières} 
+\backslash
+
+\backslash
+[.75cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+LARGE $_{*}{}^{*}{}_{*}$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+
+\lang french
+Problème 1
+\end_layout
+
+\begin_layout Standard
+
+\lang french
+On considère l'automate 
+\begin_inset Formula $\mathcal{A}^{3}$
+\end_inset
+
+ suivant : 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang french
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{.3cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+node[state,initial,accepting] (q_0)   {$q_1$};  
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+node[state,initial left] (q_1) [above right=of q_0] {$q_2$};  
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+node[state,initial left] (q_2) [below right=of q_0] {$q_3$};
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+path[->]    
+\end_layout
+
+\begin_layout Plain Layout
+
+ (q_0) edge               node {$a$} (q_1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+ (q_1) edge [loop right]  node {$b$} ()
+\end_layout
+
+\begin_layout Plain Layout
+
+       edge               node {$a$} (q_2)
+\end_layout
+
+\begin_layout Plain Layout
+
+ (q_2) edge               node {$a$} (q_0)
+\end_layout
+
+\begin_layout Plain Layout
+
+       edge [loop right]  node {$b$} ();
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Calculer le mot 
+\begin_inset Formula $abbaab$
+\end_inset
+
+.
+ Est-il accepté par 
+\lang french
+
+\begin_inset Formula $\mathcal{A}^{3}$
+\end_inset
+
+
+\lang english
+ ?
+\end_layout
+
+\begin_layout Enumerate
+
+\lang french
+Déterminer l'expression régulière de 
+\begin_inset Formula $L\left(\mathcal{A}^{3}\right)$
+\end_inset
+
+ grâce aux équations d'Arden.
+\end_layout
+
+\begin_layout Enumerate
+Calculer l'automate déterministe 
+\begin_inset Formula $\det\left(\mathcal{A}^{3}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+
+\lang french
+Problème 2
+\end_layout
+
+\begin_layout Standard
+Vrai ou Faux ? Démontrer les affirmations vraies et donner un contre-exemple
+ pour les fausses.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Le langage 
+\begin_inset Formula $L=\{a^{n}a^{n}|n\geq1\}\notin$
+\end_inset
+
+ 
+\series bold
+Reg
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Soit 
+\begin_inset Formula $L\notin$
+\end_inset
+
+ Reg, alors 
+\begin_inset Formula $\neg L\notin$
+\end_inset
+
+ 
+\series bold
+Reg
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Pour tout couple de langages irréguliers 
+\begin_inset Formula $L_{1},L_{2}$
+\end_inset
+
+, on a 
+\begin_inset Formula $L_{1}\cup L_{2}\notin$
+\end_inset
+
+ 
+\series bold
+Reg
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Le langage 
+\begin_inset Formula $L=\{a^{p}|p\text{ est premier}\}\notin$
+\end_inset
+
+ 
+\series bold
+Reg
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Le langage des expressions correctement parenthésées
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Par exemple 
+\begin_inset Formula $(())()\in\mathtt{PAREN}$
+\end_inset
+
+, mais 
+\begin_inset Formula $)()))\notin\mathtt{PAREN}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\mathtt{PAREN}\notin$
+\end_inset
+
+ 
+\series bold
+Reg
+\series default
+.
+\end_layout
+
+\begin_layout Subsection*
+
+\lang french
+Problème 3
+\end_layout
+
+\begin_layout Standard
+
+\lang french
+Donner des expressions régulières caractérisant les langages suivants sur
+ l’alphabet 
+\begin_inset Formula $\{a,b\}$
+\end_inset
+
+ : 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang french
+Mots de longueur au plus deux 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang french
+Mots de longueur paire 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang french
+Mots contenant la séquence 𝑎𝑏 mais pas la séquence 𝑏𝑎 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang french
+Mots contenant au plus l’une des deux séquences 𝑎𝑏 ou 𝑏𝑎 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang french
+Mots contenant la séquence 𝑎𝑏 mais pas la séquence 𝑎𝑎
+\end_layout
+
+\begin_layout Subsection*
+
+\lang french
+Problème 4
+\end_layout
+
+\begin_layout Enumerate
+Écrire l'expression régulière générique permettant de vérifier qu'un fichier
+ .csv avec séparateur ',' est correctement formaté.
+ 
+\end_layout
+
+\begin_layout Enumerate
+On considère le fichier csv suivant représentant un ensemble de notes et
+ commentaires client.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\size footnotesize
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size footnotesize
+id_comment,NOM_prenom_client,date,note_sur_5
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size footnotesize
+1,XXX Alice,20-07-2022,4,5
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size footnotesize
+2,YYY Bob,02-2-2021,1.5
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size footnotesize
+3,ZZZ Charlie,3/09/2022,4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Quelle sont les problèmesde format de ce fichier ? Donner l'expression régulière
+ que ce fichier doit respecter pour être bien formaté.
+\end_layout
+
+\begin_layout Enumerate
+Donner une suite d'instructions 
+\family typewriter
+replaceAll()
+\family default
+ permettant de bien formater le fichier.
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
