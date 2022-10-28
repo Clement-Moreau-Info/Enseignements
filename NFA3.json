@@ -1,0 +1,33 @@
+{     
+      "states" : ["q_0", "q_1", "q_2"],
+      "alphabet" : ["a","b"],
+      "ends" : ["q_0"]
+      "starts" : ["q_1", "q_2", "q_0"], 
+      "delta" : [
+	        {
+	         "state" : "q_0",         
+	         "symbol" : "a",         
+	         "images" : ["q_1"]        
+	        },         
+	        {
+	         "state" : "q_1",         
+	         "symbol" : "b",         
+	         "images" : ["q_1"]        
+	        }, 
+		    {
+	         "state" : "q_1",         
+	         "symbol" : "a",         
+	         "images" : ["q_2"]        
+	        },
+	         {
+	         "state" : "q_2",         
+	         "symbol" : "a",         
+	         "images" : ["q_0"]        
+	        },
+	        {
+	         "state" : "q_2",         
+	         "symbol" : "b",         
+	         "images" : ["q_2"]        
+	        }
+      ] 
+}

@@ -1,0 +1,31 @@
+DFA1 :
+aaab -> KO 
+abab -> OK
+-> OK
+
+
+DFA2 : 
+00011 -> OK
+000 -> KO
+
+DFA3 : 
+aaa -> KO
+bbababbb -> KO
+b -> OK
+
+
+NFA1 :
+abbbb -> KO
+b -> KO
+aabb -> OK
+
+
+NFA2 : 
+00001 -> OK
+0000000 -> KO
+01 -> K0
+
+
+NFA3 : 
+abbaab -> KO
+bbaaaba -> OK
