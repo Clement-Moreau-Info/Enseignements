@@ -1,7 +1,7 @@
 {     
       "states" : ["s","t", "u", "v"],
       "alphabet" : ["b","a"],
-      "ends" : ["s"]
+      "ends" : ["s"],
       "starts" : ["s"], 
       "delta" : [
 	        {
