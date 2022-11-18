@@ -1,0 +1,53 @@
+{     
+      "states" : ["q0","q1", "q2", "q3", "q4", "q5"],
+      "alphabet" : ["1","0"],
+      "ends" : ["q2", "q3", "q5"],
+      "starts" : ["q0"], 
+      "delta" : [
+	        {
+	         "state" : "q0",         
+	         "symbol" : "1",         
+	         "images" : ["q0", "q3"]        
+	        }, 
+		{
+	         "state" : "q0",         
+	         "symbol" : "e",         
+	         "images" : ["q1"]        
+	        }, 
+		{
+	         "state" : "q1",         
+	         "symbol" : "e",         
+	         "images" : ["q3"]        
+	        }, 
+		{
+	         "state" : "q1",         
+	         "symbol" : "0",         
+	         "images" : ["q2"]        
+	        }, 
+		{
+	         "state" : "q2",         
+	         "symbol" : "1",         
+	         "images" : ["q5"]        
+	        }, 
+		{
+	         "state" : "q3",         
+	         "symbol" : "0",         
+	         "images" : ["q4"]        
+	        }, 
+		{
+	         "state" : "q4",         
+	         "symbol" : "1",         
+	         "images" : ["q1"]        
+	        }, 
+		{
+	         "state" : "q4",         
+	         "symbol" : "e",         
+	         "images" : ["q2, q5"]        
+	        }, 
+		{
+	         "state" : "q5",         
+	         "symbol" : "0",         
+	         "images" : ["q4"]        
+	        }
+      ] 
+}

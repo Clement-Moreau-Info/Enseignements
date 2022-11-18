@@ -29,3 +29,21 @@ NFA2 :
 NFA3 : 
 abbaab -> KO
 bbaaaba -> OK
+
+
+
+NFA1e :
+010 -> OK
+11 -> KO
+
+
+
+NFA2e : 
+ -> OK
+0-> KO
+01 -> K0
+
+
+NFA3e : 
+01 -> OK
+0 -> OK
