@@ -1,7 +1,7 @@
 {     
       "states" : ["q0","q1", "q2", "q3", "q4", "q5"],
       "alphabet" : ["1","0"],
-      "ends" : ["q2", "q3", "q5"],
+      "ends" : ["q2", "q4", "q5"],
       "starts" : ["q0"], 
       "delta" : [
 	        {
